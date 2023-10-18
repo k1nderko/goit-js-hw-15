@@ -3,11 +3,19 @@ const createButton = document.querySelector("button[data-create]");
 const destroyButton = document.querySelector("button[data-destroy]");
 const boxesContainer = document.querySelector("#boxes");
 
-createButton.addEventListener("click", createBoxes);
-destroyButton.addEventListener("click", destroyBoxes);
+createButton.addEventListener("click", handleCreate);
+destroyButton.addEventListener("click", handleDestroy);
 
-function createBoxes() {
+function handleCreate() {
   const amount = input.value;
+  createBoxes(amount);
+}
+
+function handleDestroy() {
+  destroyBoxes();
+}
+
+function createBoxes(amount) {
   const initialBoxSize = 30;
   let boxes = "";
 
